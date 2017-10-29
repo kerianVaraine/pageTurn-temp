@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+  <style>
+  @import url('https://fonts.googleapis.com/css?family=Lato:300');
+
+    .page {
+      background-color: #fff;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: 90vh 20px;
+      /*grid-rows: repeat (4, 1fr);*/
+      /*grid-gap: 10px;*/
+      cursor: default;
+      overflow:hidden;
+    }
+
+    .default-style {
+      /*border: 3px #000 solid;*/
+      text-align: center;
+      font-family: 'Lato';
+    }
+    /*#nav1 {
+      background-color: #aaa;
+    }
+
+    #nav2 {background-color: #fff;}
+
+    #nav3 {background-color: #fff;}
+
+    #nav4 {background-color: #fff;}*/
+
+
+    /*nav buttons*/
+    #nav1, #nav2, #nav3, #nav4 {
+      background-color: #fff;
+      color: #000;
+      cursor: pointer;
+    }
+
+      #nav1:hover, #nav2:hover, #nav3:hover, #nav4:hover {
+        background-color: #aaa;
+      }
+
+
+    /*zindex class to change through jQuery*/
+
+    /*.ztop {
+      z-index: 4;
+    }
+
+    .zhide {
+      z-index: 1;
+    }*/
+
+    /*need to change opacity and z-level*/
+
+    /*defining blocks as pages*/
+    .content {
+      overflow: scroll;
+    }
+
+    #block1 {
+      grid-column: 1/span 4;
+      grid-row: 1;
+      background-color: #fff;
+      z-index: 4;
+    }
+
+    #block2 {
+      grid-column: 1/span 4;
+      grid-row: 1;
+      background-color: #fff;
+      z-index: 1;
+    }
+
+    #block3 {
+      grid-column: 1/span 4;
+      grid-row: 1;
+      background-color: #fff;
+      z-index: 1;
+    }
+
+    #block4 {
+      grid-column: 1/ span 4;
+      grid-row: 1;
+      background-color: #fff;
+      z-index: 1;
+    }
+  </style>
+
+  <script>
+    $(document).ready(function () {
+      $('#nav1').on('click', function () {
+        $('#block2, #block3, #block4').css('z-index', '1');
+        $('#block1').css('z-index', '4');
+        $('#nav1').css('background-color', '#aaa');
+        $('#nav2, #nav3, #nav4').css('background-color', '#fff');
+      });
+
+      $('#nav2').on('click', function () {
+        $('#block2').css('z-index', '4');
+        $('#block1, #block3, #block4').css('z-index', '1');
+        $('#nav2').css('background-color', '#aaa');
+        $('#nav1, #nav3, #nav4').css('background-color', '#fff');
+      });
+
+      $('#nav3').on('click', function () {
+        $('#block1, #block2, #block4').css('z-index', '1');
+        $('#block3').css('z-index', '4');
+        $('#nav3').css('background-color', '#aaa');
+        $('#nav1, #nav2, #nav4').css('background-color', '#fff');
+      });
+
+      $('#nav4').on('click', function () {
+        $('#block4').css('z-index', '4');
+        $('#block1, #block2, #block3').css('z-index', '1');
+        $('#nav4').css('background-color', '#aaa');
+        $('#nav1, #nav2, #nav3').css('background-color', '#fff');
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <div class="page">
+    <div id="block1" class="default-style content"><h1>Block 1</h1><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit distinctio, rerum culpa earum unde nesciunt mollitia, ullam nihil laboriosam quas deleniti excepturi enim omnis eos quibusdam fuga! Doloremque, corrupti, nobis? Nam quia fugit qui ex excepturi alias, ad aliquid, natus voluptates. Minima quam, a. Quaerat blanditiis laudantium, fugiat ipsam autem vel inventore consectetur accusantium non aliquid maxime voluptatibus excepturi animi eos vero hic iure fugit nemo voluptates dicta eveniet, in, quibusdam unde! Modi nulla possimus quasi nostrum maxime est illo dolorem similique beatae veniam aperiam, nesciunt, reiciendis iure ipsum nihil magni assumenda maiores! Iste velit esse, eius, similique, libero qui veritatis alias soluta, voluptatem fugiat omnis commodi. Tenetur atque reiciendis expedita porro velit dolores nobis omnis cumque deserunt recusandae, alias praesentium animi esse, libero quidem minus. Perspiciatis optio voluptates atque dicta cupiditate ab dolorum qui fugiat. Optio praesentium at et aliquam doloremque architecto necessitatibus, eius. Beatae vero dolor soluta commodi.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque non ad fugiat nobis, cum, dolor id, error cupiditate repellat quibusdam ducimus repudiandae eligendi repellendus aperiam temporibus quidem. Sunt, minima, minus? Eum nihil fuga odit, voluptatum facilis necessitatibus aliquid nesciunt cumque. Rerum itaque quod suscipit pariatur! Numquam non minus provident sit rerum, quidem praesentium, quos eaque dolorem nostrum, laborum ex doloribus dolorum! Ratione necessitatibus vero a culpa. Quos cupiditate dolore porro pariatur asperiores. In libero eveniet doloremque corporis incidunt illo quos consectetur accusantium nobis alias est sunt, distinctio, rerum veniam ratione dignissimos similique placeat vero totam ipsa maxime asperiores ea recusandae voluptates. Non rerum similique dolor aliquid iste. Repellendus rem, quaerat aut totam quia dolorum natus! Eveniet corporis, eius iusto vitae rerum soluta in sequi non, dignissimos nihil voluptatibus aperiam enim. Id eos assumenda iusto aliquam quos aspernatur eius modi ducimus dolores hic. Blanditiis, earum. Ipsa corporis earum iusto accusamus explicabo.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium fuga sapiente nihil! Autem sunt pariatur vero facilis quibusdam explicabo aperiam placeat odio! Quae nam unde nobis, veritatis ipsum beatae necessitatibus laudantium minus, sunt deleniti ipsam eos rem expedita mollitia iure eius earum fugiat nisi atque vero quibusdam cum? Consequuntur, consectetur.</p></div>
+    <div id="block2" class="default-style"><h1>Block 2</h2><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, cupiditate, ea. Dolorem, et, beatae. Illo fuga deserunt, in eveniet commodi. Molestiae dicta voluptas deleniti aut, natus, accusantium aspernatur ut libero perferendis nemo adipisci hic id. Cumque sint blanditiis provident nulla, minima unde error est natus laborum, obcaecati, facere fugit accusamus.</p></div>
+    <div id="block3" class="default-style"><h1>Block 3</h1><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, dolore suscipit temporibus nihil rem consequuntur asperiores id culpa aliquid esse sint iste placeat, repellendus officiis voluptate quas vero ut hic dicta. Et, eaque, sit. Ea vel accusantium debitis pariatur molestias similique obcaecati, ducimus eveniet facilis corporis facere modi, omnis nihil.</p></div>
+    <div id="block4" class="default-style"><h1>Block 4</h1><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate id perspiciatis eligendi sit veniam voluptas laboriosam, ipsum culpa deserunt ipsa dolorum sint nemo molestiae, eius nihil consequuntur magni dolores nisi veritatis perferendis, repellendus hic. Eaque dicta eius provident et sapiente quod doloremque, rem vitae officiis, deleniti quas optio ab velit!</p></div>
+    <div id="nav1" class="default-style page-butt">page 1</div>
+    <div id="nav2" class="default-style page-butt">page 2</div>
+    <div id="nav3" class="default-style page-butt">page 3</div>
+    <div id="nav4" class="default-style page-butt">page 4</div>
+
+  </div>
+</body>
+
+</html>
