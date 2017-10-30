@@ -16,9 +16,9 @@
       background-color: #fff;
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      grid-template-rows: 90vh 20px;
+      grid-template-rows: 90vh 25px;
       /*grid-rows: repeat (4, 1fr);*/
-      /*grid-gap: 10px;*/
+      grid-gap: 10px;
       cursor: default;
       overflow:hidden;
     }
@@ -28,45 +28,25 @@
       text-align: center;
       font-family: 'Lato';
     }
-    /*#nav1 {
-      background-color: #aaa;
-    }
-
-    #nav2 {background-color: #fff;}
-
-    #nav3 {background-color: #fff;}
-
-    #nav4 {background-color: #fff;}*/
-
 
     /*nav buttons*/
     #nav1, #nav2, #nav3, #nav4 {
       background-color: #fff;
       color: #000;
       cursor: pointer;
+      border: 1px solid #444;
+      margin-left: 10px;
+      margin-right: 10px;
     }
-
-      #nav1:hover, #nav2:hover, #nav3:hover, #nav4:hover {
-        background-color: #aaa;
-      }
-
-
-    /*zindex class to change through jQuery*/
-
-    /*.ztop {
-      z-index: 4;
+    #nav1 {
+      background-color: #aaa;
     }
-
-    .zhide {
-      z-index: 1;
-    }*/
-
-    /*need to change opacity and z-level*/
-
+    
     /*defining blocks as pages*/
+    /*content is a "card type idea"*/
     .content {
       overflow-x: hidden;
-      overflow-y: scroll;
+      overflow-y: auto;
     }
 
     #block1 {
@@ -100,6 +80,8 @@
 
   <script>
     $(document).ready(function () {
+
+      /* Nav bar selection highlight plus zlevel shifing of pages */
       $('#nav1').on('click', function () {
         $('#block2, #block3, #block4').css('z-index', '1');
         $('#block1').css('z-index', '4');
@@ -127,8 +109,20 @@
         $('#nav4').css('background-color', '#aaa');
         $('#nav1, #nav2, #nav3').css('background-color', '#fff');
       });
+
+      /*Hover effect on navs*/
+      $('#nav1, #nav2, #nav3, #nav4').hover(function () {
+        $(this).css('font-weight', 'bold');
+      },
+
+      function () {
+        $(this).css('font-weight', '400');
+      }
+    );
+
     });
   </script>
+
 </head>
 
 <body>
